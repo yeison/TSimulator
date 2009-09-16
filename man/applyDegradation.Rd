@@ -3,10 +3,10 @@
 \alias{applyDegradation}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+function to apply a series of negative values to the diagonal of an interaction matrix
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function transforms an interaction matrix to approximate a gene network where all of the RNA transcripts have a relatively similar degradation value.  It does so by placing a random negative value in each cell of the diagonal of the matrix.  The negative value does not exceed 
 }
 \usage{
 applyDegradation(bm)
