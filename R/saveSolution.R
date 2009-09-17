@@ -9,5 +9,5 @@ function(initialExpressionValues, interactionMatrix, setNumber){
 	
 	# Save that list to the file with the provided naming convention
 	# size{N}Synth{set}Solution.RData
-	save(solutionList, file=paste("size", size, "Synth", setNumber, "Solution", ".RData", sep=""))
+	save(list(initialExpressionValues, interactionMatrix), file=paste("size", size, "Synth", setNumber, "Solution", ".RData", sep=""))
 }
