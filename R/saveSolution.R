@@ -1,14 +1,13 @@
 saveSolution <-
-function(xinit, bm, setNumber){
+function(initialExpressionValues, interactionMatrix, setNumber){
 	size = length(xinit)
-	solutionList = list(xinit, bm)
-	
-	
-	names(solutionList) = list(paste("xinit", setNumber, "size", size, sep=""), paste("bm", setNumber, "size", size, sep=""))
+	# Create a list with the interactionMatrix, and the initial expression values.
+	solutionList = list(initialExpressionValues, interactionMatrix)
+	names(solutionList) = list("init", "interactions")
 	
 	solutionList
-		
-	save(solutionList, file=paste("size", size, "Synth", setNumber, "Solution", ".RData", sep=""))
 	
+	# Save that list to the file with the provided naming convention
+	# size{N}Synth{set}Solution.RData
+	save(solutionList, file=paste("size", size, "Synth", setNumber, "Solution", ".RData", sep=""))
 }
-

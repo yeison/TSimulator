@@ -5,4 +5,3 @@ function(x, column){
 	names = paste("G", 1:len, sep="")
 	return(names)	
 }
-
