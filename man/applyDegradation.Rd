@@ -1,20 +1,21 @@
 \name{applyDegradation}
 \Rdversion{1.1}
 \alias{applyDegradation}
+\alias{createNetwork}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-function to apply a series of negative values to the diagonal of an interaction matrix
+A function to apply a series of negative values to the diagonal of an interaction matrix
 }
 \description{
 This function transforms an interaction matrix to approximate a gene network where all of the RNA transcripts have a relatively similar degradation value.  It does so by placing a random negative value in each cell of the diagonal of the matrix.  The negative value does not exceed 
 }
 \usage{
-applyDegradation(bm)
+applyDegradation(interactionMatrix)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{bm}{
-%%     ~~Describe \code{bm} here~~
+  \item{interactionMatrix}{
+The interactionMatrix passed to this function should be a matrix containing the interaction values of a regulatory gene network.  Use \code{\link{createNetwork}} to create an interactionMatrix.
 }
 }
 \details{

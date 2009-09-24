@@ -1,20 +1,21 @@
+
 \name{bmat}
 \Rdversion{1.1}
 \alias{bmat}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Interaction Matrix
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Create a square matrix containing the given number of elements.  Each element will have a random value associated with it.  These random values represent the regulatory strengths of the genes.
 }
 \usage{
-bmat(x)
+bmat(n)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
+  \item{n}{
+The size of the matrix.  {n} represents the number of elements that the matrix contains.
 }
 }
 \details{
