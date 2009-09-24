@@ -1,5 +1,5 @@
 plotLDE <-
-function(dataMatrix, plotType=NULL,ymin = min(dataMatrix), ymax = max(dataMatrix) ){
+function(dataMatrix, plotType=NULL, ymin = min(dataMatrix, na.rm=TRUE), ymax = max(dataMatrix, na.rm=TRUE)){
 	size = dim(dataMatrix)[1]
 	columns = dim(dataMatrix)[2]
 	rows = dim(dataMatrix)[1]
@@ -11,4 +11,3 @@ function(dataMatrix, plotType=NULL,ymin = min(dataMatrix), ymax = max(dataMatrix
 	}
 	legend("topleft", "Legend", paste("G", 1:size, sep=""), col=1:size, fill=1:size)
 }
-

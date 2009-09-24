@@ -24,4 +24,3 @@ function( file, r_names=NULL, c_names=NULL ) {
 	} 
 	return(x)
 }
-
