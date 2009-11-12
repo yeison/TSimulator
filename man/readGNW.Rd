@@ -6,25 +6,25 @@
 %%  ~~function to do ... ~~
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+%%  ~~ Opens a GeneNetWeaver trajectories file, and extracts a certain number of data points.  Converts the data to TSimulator format.  Returns a matrix in TSimulator format. ~~
 }
 \usage{
-readGNW(file, npoints = 21)
+readGNW(filePath, numberOfPoints = 21)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{file}{
-%%     ~~Describe \code{file} here~~
+%%     \code{file} is the file path to a GeneNetWeaver trajectories file.  Usually it is in .tsv format.
 }
   \item{npoints}{
-%%     ~~Describe \code{npoints} here~~
+%%     ~~\code{npoints} is the number of points to extract from the original data file.  These will be collectd at even intervals.
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
+%%  The values returned will be a matrix of gene transcription levels at evenly spaced time intervals.  
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
@@ -34,7 +34,7 @@ readGNW(file, npoints = 21)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+%%  Yeison Rodriguez
 }
 \note{
 %%  ~~further notes~~

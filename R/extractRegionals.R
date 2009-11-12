@@ -1,3 +1,4 @@
+# This function takes a set of synthetic data, and outputs 
 extractRegionals <- function(syntheticDataSet, numberOfRegions=7, pointsPerRegion=3, spread=1){
 	size = dim(syntheticDataSet)[2]
 	numberOfPoints = pointsPerRegion*numberOfRegions
