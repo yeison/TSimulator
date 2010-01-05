@@ -1,7 +1,7 @@
 Package: TSimulator
 Type: Package
 Title: Simulates gene transcription in the gene network/subnetwork provided
-Version: 0.81
+Version: 0.82
 Date: 2009-09-16
 Author: Yeison Rodriguez
 Maintainer: Yeison Rodriguez <yeison.rodriguez@nyu.edu>
