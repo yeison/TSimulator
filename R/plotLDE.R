@@ -1,5 +1,5 @@
 plotLDE <-
-function(dataMatrix, plotType=NULL, ymin = min(dataMatrix, na.rm=TRUE), ymax = max(dataMatrix, na.rm=TRUE)){
+function(dataMatrix, plotType=NULL, geneNames=FALSE, ymin = min(dataMatrix, na.rm=TRUE), ymax = max(dataMatrix, na.rm=TRUE)){
 	size = dim(dataMatrix)[1]
 	columns = dim(dataMatrix)[2]
 	rows = dim(dataMatrix)[1]
@@ -9,7 +9,11 @@ function(dataMatrix, plotType=NULL, ymin = min(dataMatrix, na.rm=TRUE), ymax = m
 	for(i in seq(1, rows)){
 		points(1:columns, dataMatrix[i, ], col=i, type=plotType)
 	}
-	legend("topleft", "Legend", paste("G", 1:size, sep=""), col=1:size, fill=1:size)
+	if(typeof(geneNames) != "character"){
+		legend("topleft", "Legend", paste("G", 1:size, sep=""), col=1:size, fill=1:size)
+	}
+	else
+		legend("topleft", "Legend", geneNames, col=1:size, fill=1:size)
 }
 plotTriplets <- function(d3Matrix, plotType=NULL, ymin = min(d3Matrix, na.rm=TRUE), ymax = max(d3Matrix, na.rm=TRUE)){
 	size = dim(d3Matrix)[1]
