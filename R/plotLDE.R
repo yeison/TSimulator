@@ -7,14 +7,15 @@ function(dataMatrix, plotType=NULL, geneNames=FALSE, ymin = min(dataMatrix, na.r
     #ymax = max(dataMatrix)
 	plot(1:columns, dataMatrix[1, ], xlab="Data Points", ylab="Transcription-product Values", xlim=c(0, columns), ylim=c(ymin, ymax))
 	for(i in seq(1, rows)){
-		points(1:columns, dataMatrix[i, ], col=i, type=plotType)
+		points(1:columns, dataMatrix[i, ], col=i, pch=i, type=plotType)
 	}
 	if(typeof(geneNames) != "character"){
-		legend("topleft", "Legend", paste("G", 1:size, sep=""), col=1:size, fill=1:size)
+		legend("topleft", "Legend", paste("G", 1:size, sep=""), pch=1:size, fill=1:size)
 	}
 	else
-		legend("topleft", "Legend", geneNames, col=1:size, fill=1:size)
+		legend("topleft", "Legend", geneNames, pch=1:size, fill=1:size)
 }
+
 plotTriplets <- function(d3Matrix, plotType=NULL, ymin = min(d3Matrix, na.rm=TRUE), ymax = max(d3Matrix, na.rm=TRUE)){
 	size = dim(d3Matrix)[1]
 	columns = dim(d3Matrix)[2]
