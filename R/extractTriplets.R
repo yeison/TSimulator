@@ -10,8 +10,9 @@ extractTriplets <- function(syntheticDataSet, numberOfRegions=7, replicates=3, s
 	# Take the first column of the data set (the initial conditions) for referential purposes.
 	extracted[ , 1, seq(1, replicates)] = syntheticDataSet[ , 1]
 		
-	# Move to each region, and look at data points behind and in front 
-	# of that region.
+	# Simulate replicate number of experimental procedures (typically 3).
+	# Conducting each procedure adds variable noise to the data set.
+	# Approximate 
 	for(n in 1:replicates){
 		#Shift the data set based on SD noise.
 		syntheticDataSet = extractWithSD(syntheticDataSet, numberOfRegions)

@@ -5,7 +5,10 @@ function(dataMatrix, plotType=NULL, geneNames=FALSE, ymin = min(dataMatrix, na.r
 	rows = dim(dataMatrix)[1]
     #ymin = min(dataMatrix)
     #ymax = max(dataMatrix)
-	plot(1:columns, dataMatrix[1, ], xlab="Data Points", ylab="Transcription-product Values", xlim=c(0, columns), ylim=c(ymin, ymax))
+    xmin = as.integer(colnames(dataMatrix)[1])
+    xmax = as.integer(colnames(dataMatrix)[columns])
+    #ticks = (xmax/columns) * 5
+	plot(1:columns, dataMatrix[1, ], xlab="Data Points", ylab="Transcription-product Values", xlim=c(0, columns), ylim=c(ymin, ymax), xaxs = "i")
 	for(i in seq(1, rows)){
 		points(1:columns, dataMatrix[i, ], col=i, type=plotType)
 	}

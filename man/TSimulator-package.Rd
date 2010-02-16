@@ -20,7 +20,7 @@ LazyLoad: \tab yes\cr
 ~~ important functions ~~
 }
 \author{
-Yeison Rodriguez <yeison.rodriguez@nyu.edu>, with contributions from Aviv Madar <madaraviv@gmail.com> and Alex Greenfield <agreenfi1@gmail.com>.
+Yeison Rodriguez <yeison.rodriguez@nyu.edu>, with contributions from Aviv Madar <madaraviv@gmail.com> , Alex Greenfield <agreenfi1@gmail.com>, and Richard Bonneau <bonneau@nyu.edu>.
 
 Maintainer: Yeison Rodriguez <yeison.rodriguez@nyu.edu>
 }
