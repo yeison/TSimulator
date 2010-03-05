@@ -6,7 +6,7 @@ loadGNWData <- function(inFolderName, outFolderName="TS_Output", loadDir=path.ex
 	
 	#seriesType one: Stochastic
 	stoch = list()
-	for(series in seq(3)){
+	for(series in seq(seriesCount)){
 		seriesPath = paste(loadPath, seriesType[1], series, sep="/")
 		stoch = append(stoch, toList(timeSeriesExperiment(seriesPath), stoch, series))
 	}
@@ -19,14 +19,16 @@ loadGNWData <- function(inFolderName, outFolderName="TS_Output", loadDir=path.ex
 	}
 	
 	#seriesType three: Stochastic and Deterministic, 21 data points.
-#	for(series in seq(length(seriesType - 1))){
-#		for(series in seq(seriesCount))
-#			seriesPath = paste(loadPath, seriesType[3], seriesType[1], series, sep="/")
-#			timeSeriesExperiment(seriesPath, 21)
-#		for(series in seq(seriesCount))
-#			seriesPath = paste(loadPath, seriesType[3], seriesType[2], series, sep="/")
-#			timeSeriesExperiment(seriesPath, 21)
-#	}
+	for(series in seq(length(seriesType) - 1)){
+		for(series in seq(seriesCount))
+			seriesPath = paste(loadPath, seriesType[3], seriesType[1], series, sep="/")
+			stoch21 = timeSeriesExperiment(seriesPath, 21)
+		for(series in seq(seriesCount))
+			seriesPath = paste(loadPath, seriesType[3], seriesType[2], series, sep="/")
+			deter21 = timeSeriesExperiment(seriesPath, 21)
+	}
+
+browser()
 	savePath = createSavePath(outFolderName)
 	save(stoch, deter, file=savePath)
 }
