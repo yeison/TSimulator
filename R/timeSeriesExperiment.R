@@ -28,7 +28,6 @@ loadGNWData <- function(inFolderName, outFolderName="TS_Output", loadDir=path.ex
 			deter21 = timeSeriesExperiment(seriesPath, 21)
 	}
 
-browser()
 	savePath = createSavePath(outFolderName)
 	save(stoch, deter, file=savePath)
 }
