@@ -37,8 +37,8 @@ timeSeriesExperiment <- function(seriesPath, npoints=1000){
 	seriesPath = paste(seriesPath, "Ecoli-1_dream4_timeseries.tsv", sep="/")
 	seriesData = readGNW(seriesPath, npoints, plot=FALSE)
 	print("Finished")
-	triplicateData = extractRegionals(seriesData)
-	return(triplicateData)
+	extracted = extractRegionals(seriesData)
+	return(extracted)
 }
 
 toList <- function(data, theList, seriesNumber){
