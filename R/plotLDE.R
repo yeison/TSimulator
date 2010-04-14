@@ -8,9 +8,22 @@ function(dataMatrix, plotType=NULL, geneNames=FALSE, ymin = min(dataMatrix, na.r
     xmin = as.integer(colnames(dataMatrix)[1])
     xmax = as.integer(colnames(dataMatrix)[columns])
     #ticks = (xmax/columns) * 5
-	plot(1:columns, dataMatrix[1, ], xlab="Data Points", ylab="Transcription-product Values", xlim=c(0, columns), ylim=c(ymin, ymax), xaxs = "i")
+    if(is.null(colnames(dataMatrix))){
+			plot(1:columns, dataMatrix[1, ], xlab="Time", ylab="Transcription-product Values", xlim=c(0, columns), ylim=c(ymin, ymax), xaxs = "i")
+		}
+		else{
+			cols = as.numeric(colnames(dataMatrix))
+			plot(cols, dataMatrix[1, ], xlab="Time", ylab="Transcription-product Values", xlim=c(0, cols[length(cols)]), ylim=c(ymin, ymax), xaxs = "i")
+		}
+
 	for(i in seq(1, rows)){
-		points(1:columns, dataMatrix[i, ], col=i, type=plotType)
+		if(is.null(colnames(dataMatrix))){
+			points(1:columns, dataMatrix[i, ], col=i, type=plotType)
+		}
+		else{
+			cols = as.numeric(colnames(dataMatrix))
+			points(cols, dataMatrix[i, ], col=i, type=plotType)
+		}
 	}
 	if(typeof(geneNames) != "character"){
 		legend("topleft", "Legend", paste("G", 1:size, sep=""), col=1:size, fill=1:size)

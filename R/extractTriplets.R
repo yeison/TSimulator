@@ -15,7 +15,7 @@ extractTriplets <- function(syntheticDataSet, numberOfRegions=7, replicates=3, s
 	# Approximate 
 	for(n in 1:replicates){
 		#Shift the data set based on SD noise.
-		syntheticDataSet = extractWithSD(syntheticDataSet, numberOfRegions)
+		syntheticDataSet = extractWithNoise(syntheticDataSet, numberOfRegions, .05)
 												#length(syntheticDataSet[1, ]))
 		for(i in 0:numberOfRegions){
 			extracted[ , i*big_dt, n] = syntheticDataSet[ , i]
